@@ -232,3 +232,12 @@ Das DataLIFS wird zur Wiederherstellung der vollen Funktionalität angezeigt.
  If you remove the `hostNQN` of the worker node from the corresponding subsystem, the unstaging process gets stuck when you attempt to delete the pod. In this scenario, you cannot run any NVMe CLI commands on the Kubernetes node.
 .Behelfslösung
 Fügen Sie die hinzu `hostNQN` Zurück zum Subsystem.
+
+
+
+=== Namespace-Zuordnung wurde gelöscht
+
+Bei Verwendung von nvme/tcp in K8s-Umgebungen mit langen Node-Namen können Pods nicht mit dem Storage verbunden werden.
+
+.Behelfslösung
+Verkürzen Sie den Node-Namen, sodass der Subsystemname weniger als 64 Zeichen enthält.
